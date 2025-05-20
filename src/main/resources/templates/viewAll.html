@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>List of Expense</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Number</th>
+    </tr>
+    <tr th:each="expense : ${expenseList}">
+        <td th:text="${expense.name}">Name</td>
+        <td th:text="${expense.amount}">Number</td>
+    </tr>
+</table>
+</body>
+</html>

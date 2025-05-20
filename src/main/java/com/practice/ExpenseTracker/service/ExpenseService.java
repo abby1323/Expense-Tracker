@@ -14,7 +14,6 @@ public class ExpenseService {
     //repository
     private final ExpenseRepository expenseRepository;
 
-
     public ExpenseService(ExpenseRepository expenseRepository) {
         this.expenseRepository = expenseRepository;
     }
@@ -28,18 +27,22 @@ public class ExpenseService {
     }
 
     public Expense updateExpense(Expense expense) {
-        List<Expense> expenseList = expenseRepository.findAll().stream().map(
-                x -> x.getId()==expense.getId()?expense:x)
-                        .collect(Collectors.toList());
-        expenseRepository.saveAll(expenseList);
+//        List<Expense> expenseList = expenseRepository.findAll().stream().map(
+//                x -> x.getId()==expense.getId()?expense:x)
+//                        .collect(Collectors.toList());
+//        expenseRepository.saveAll(expenseList);
         return expense;
 
     }
 
     public String deleteExpense(Integer id) {
-
         List<Expense> expenseList = expenseRepository.findAll();
         boolean b = expenseList.removeIf(x -> expenseList.contains(expenseRepository.findById(id)));
         return b?"Deleted":"Not able to delete";
+    }
+
+    public void addExpense(String name, String amount) {
+        Expense expense = new Expense(name,amount);
+        expenseRepository.save(expense);
     }
 }

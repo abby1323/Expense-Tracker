@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Expense Tracker Home Page</h1>
+    <form action="#" th:action="@{/switch}" method="post">
+        <button type="submit" name="action" value="addExpense">Add Expense</button>
+        <button type="submit" name="action" value="updateExpense">Update Expense</button>
+        <button type="submit" name="action" value="deleteExpense">Delete Expense</button>
+        <button type="submit" name="action" value="viewAll">View All Expenses</button>
+        <button type="submit" name="action" value="viewSummary">View Summary of Expenses</button>
+        <button type="submit" name="action" value="viewSummaryMonthly">View Summary of Expenses for one month</button>
+    </form>
+
+
+</body>
+</html>

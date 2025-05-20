@@ -22,4 +22,11 @@ public class Expense {
     private Categories category;
     private Double amount;
     private LocalDate date;
+
+    public Expense(){}
+
+    public Expense(String name, String amount) {
+        this.name = name;
+        this.amount= Double.valueOf(amount);
+    }
 }
